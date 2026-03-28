@@ -29,10 +29,7 @@ export const enhancePrompt = async (input) => {
 
     const data = await res.json();
 
-    return (
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Enhancement failed"
-    );
+    return data?.candidates?.[0]?.content?.parts?.[0]?.text || "Enhancement failed";
   } catch (error) {
     console.error("Enhance Error:", error);
     return "Error enhancing prompt";
@@ -47,9 +44,7 @@ export const generateImage = async (prompt) => {
     const shortPrompt = (prompt || "beautiful scenery").slice(0, 100);
     const finalPrompt = `${shortPrompt} high quality, realistic, 4k`;
 
-    return `https://image.pollinations.ai/prompt/${encodeURIComponent(
-      finalPrompt
-    )}`;
+    return `https://image.pollinations.ai/prompt/${encodeURIComponent(finalPrompt)}`;
   } catch (error) {
     console.error("Image Generation Error:", error);
     return null;
