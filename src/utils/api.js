@@ -1,5 +1,9 @@
 const API_KEY = process.env.AIzaSyBaVElx8O3e8XrA8DtweuGMc67HYpiLi3Y;
 
+
+// -----------------------------
+// 🔹 TEXT ENHANCEMENT
+// -----------------------------
 export const enhancePrompt = async (input) => {
   try {
     const res = await fetch(
@@ -35,7 +39,9 @@ export const enhancePrompt = async (input) => {
   }
 };
 
-
+// -----------------------------
+// 🔹 IMAGE GENERATION
+// -----------------------------
 export const generateImage = async (prompt) => {
   try {
     const shortPrompt = (prompt || "beautiful scenery").slice(0, 100);
@@ -50,6 +56,9 @@ export const generateImage = async (prompt) => {
   }
 };
 
+// -----------------------------
+// 🔹 IMAGE ANALYSIS
+// -----------------------------
 export const analyzeImage = async () => {
   try {
     return "A modern scene with vibrant colors, soft lighting, and cinematic composition. Style: professional photography.";
